@@ -1,52 +1,151 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'OpenClaw 小白指南',
-  description: '从新手到精通，采集网络世界各种好玩的 OpenClaw 技巧',
+  ignoreDeadLinks: true,
+  title: 'OpenClaw 实战指南',
+  description: '从零基础到精通，掌握 100+ 实用技巧，让 AI 真正为你工作',
   base: '/openclaw-guide/',
   
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['meta', { name: 'theme-color', content: '#3c3c3c' }],
+    ['meta', { name: 'og:type', content: 'website' }],
+    ['meta', { name: 'og:locale', content: 'zh-CN' }],
+    ['meta', { name: 'og:site_name', content: 'OpenClaw 实战指南' }],
+  ],
+  
   themeConfig: {
+    logo: '/logo.svg',
+    
     nav: [
-      { text: '首页', link: '/' },
-      { text: '新手指南', link: '/guide/' },
-      { text: '进阶技巧', link: '/tips/' },
-      { text: '实战案例', link: '/examples/' }
+      { text: '🏠 首页', link: '/' },
+      { text: '📚 新手指南', link: '/guide/' },
+      { text: '🛠️ 技巧大全', link: '/tips/' },
+      { text: '💡 实战案例', link: '/examples/' },
+      { 
+        text: '🔗 更多',
+        items: [
+          { text: '🐙 GitHub', link: 'https://github.com/openclaw/openclaw' },
+          { text: '📖 官方文档', link: 'https://docs.openclaw.ai' },
+          { text: '💬 社区讨论', link: 'https://github.com/openclaw/openclaw/discussions' }
+        ]
+      }
     ],
     
     sidebar: {
       '/guide/': [
         {
-          text: '入门基础',
+          text: '🚀 快速开始',
+          collapsed: false,
           items: [
             { text: '什么是 OpenClaw', link: '/guide/what-is-openclaw' },
             { text: '安装与配置', link: '/guide/installation' },
-            { text: '第一个技能', link: '/guide/first-skill' }
+            { text: '第一个技能', link: '/guide/first-skill' },
+            { text: '核心概念', link: '/guide/concepts' }
           ]
         },
         {
-          text: '核心概念',
+          text: '📖 基础配置',
+          collapsed: false,
           items: [
             { text: 'SOUL.md - 灵魂文件', link: '/guide/soul-md' },
-            { text: 'AGENTS.md - 工作区配置', link: '/guide/agents-md' },
-            { text: 'MEMORY.md - 记忆系统', link: '/guide/memory-md' }
+            { text: 'AGENTS.md - 工作区', link: '/guide/agents-md' },
+            { text: 'MEMORY.md - 记忆', link: '/guide/memory-md' },
+            { text: '配置 AI 模型', link: '/guide/model-config' }
+          ]
+        },
+        {
+          text: '💬 消息渠道',
+          collapsed: true,
+          items: [
+            { text: '钉钉配置', link: '/guide/dingtalk' },
+            { text: '飞书配置', link: '/guide/feishu' },
+            { text: 'Telegram 配置', link: '/guide/telegram' }
           ]
         }
       ],
       '/tips/': [
         {
-          text: '实用技巧',
+          text: '📁 文件处理',
+          collapsed: false,
           items: [
-            { text: '搜索技巧大全', link: '/tips/search-skills' },
-            { text: '文件操作妙招', link: '/tips/file-operations' },
-            { text: '浏览器自动化', link: '/tips/browser-auto' }
+            { text: '批量文档处理', link: '/tips/file-batch' },
+            { text: '数据分析技巧', link: '/tips/data-analysis' },
+            { text: '格式转换大全', link: '/tips/format-convert' }
           ]
         },
         {
-          text: '高阶玩法',
+          text: '🔍 信息搜索',
+          collapsed: false,
           items: [
-            { text: '自定义技能开发', link: '/tips/custom-skills' },
-            { text: '多 Agent 协作', link: '/tips/multi-agent' },
-            { text: '定时任务配置', link: '/tips/cron-jobs' }
+            { text: '搜索技巧大全', link: '/tips/search-skills' },
+            { text: '竞品分析方法', link: '/tips/competitor-analysis' },
+            { text: '舆情监控', link: '/tips/social-monitoring' }
+          ]
+        },
+        {
+          text: '🌐 浏览器自动化',
+          collapsed: false,
+          items: [
+            { text: '数据采集', link: '/tips/web-scraping' },
+            { text: '自动填表', link: '/tips/form-automation' },
+            { text: '价格监控', link: '/tips/price-monitor' }
+          ]
+        },
+        {
+          text: '🤖 自动化',
+          collapsed: false,
+          items: [
+            { text: '定时任务配置', link: '/tips/cron-jobs' },
+            { text: '心跳检测', link: '/tips/heartbeat' },
+            { text: '工作流设计', link: '/tips/workflow' }
+          ]
+        },
+        {
+          text: '🛠️ 技能开发',
+          collapsed: true,
+          items: [
+            { text: '开发第一个 Skill', link: '/tips/custom-skills' },
+            { text: 'Skill 最佳实践', link: '/tips/skill-best-practices' },
+            { text: 'Skill 发布分享', link: '/tips/skill-publish' }
+          ]
+        }
+      ],
+      '/examples/': [
+        {
+          text: '💼 办公自动化',
+          collapsed: false,
+          items: [
+            { text: '智能日报系统', link: '/examples/daily-report' },
+            { text: '合同审查助手', link: '/examples/contract-review' },
+            { text: '会议纪要生成', link: '/examples/meeting-minutes' }
+          ]
+        },
+        {
+          text: '🚀 开发提效',
+          collapsed: false,
+          items: [
+            { text: '代码自动注释', link: '/examples/code-document' },
+            { text: '自动化测试', link: '/examples/auto-test' },
+            { text: 'API 文档生成', link: '/examples/api-doc' }
+          ]
+        },
+        {
+          text: '📊 数据分析',
+          collapsed: false,
+          items: [
+            { text: '竞品价格监控', link: '/examples/price-monitor' },
+            { text: '舆情监控分析', link: '/examples/sentiment-analysis' },
+            { text: '数据报表生成', link: '/examples/data-report' }
+          ]
+        },
+        {
+          text: '🎓 个人效率',
+          collapsed: false,
+          items: [
+            { text: '智能知识库', link: '/examples/knowledge-base' },
+            { text: '个人财务助手', link: '/examples/finance-assistant' },
+            { text: '学习计划管理', link: '/examples/study-plan' }
           ]
         }
       ]
@@ -57,12 +156,54 @@ export default defineConfig({
     ],
     
     footer: {
-      message: 'OpenClaw 小白指南 - 让每个人都能用好 AI',
-      copyright: 'Copyright © 2026'
+      message: 'OpenClaw 实战指南 - 让每个人都能用好 AI',
+      copyright: 'Copyright © 2026 | 本站仅供学习交流使用'
     },
     
     search: {
-      provider: 'local'
+      provider: 'local',
+      options: {
+        translations: {
+          button: {
+            buttonText: '搜索文档',
+            buttonAriaLabel: '搜索文档'
+          },
+          modal: {
+            noResultsText: '无法找到相关结果',
+            resetButtonTitle: '清除查询条件',
+            footer: {
+              selectText: '选择',
+              navigateText: '切换',
+              closeText: '关闭'
+            }
+          }
+        }
+      }
+    },
+    
+    outline: {
+      level: 'deep',
+      label: '页面导航'
+    },
+    
+    docFooter: {
+      prev: '上一页',
+      next: '下一页'
+    },
+    
+    lastUpdated: {
+      text: '最后更新',
+      formatOptions: {
+        dateStyle: 'short',
+        timeStyle: 'short'
+      }
+    }
+  },
+  
+  markdown: {
+    lineNumbers: true,
+    config: (md) => {
+      // 可以在这里添加 markdown-it 插件
     }
   }
 })
