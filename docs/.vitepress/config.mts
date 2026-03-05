@@ -22,6 +22,7 @@ export default defineConfig({
       { text: '📚 新手指南', link: '/guide/' },
       { text: '🛠️ 技巧大全', link: '/tips/' },
       { text: '💡 实战案例', link: '/examples/' },
+      { text: '🌐 资源导航', link: '/resources/' },
       { 
         text: '🔗 更多',
         items: [
@@ -146,6 +147,41 @@ export default defineConfig({
             { text: '智能知识库', link: '/examples/knowledge-base' },
             { text: '个人财务助手', link: '/examples/finance-assistant' },
             { text: '学习计划管理', link: '/examples/study-plan' }
+          ]
+        }
+      ],
+      '/resources/': [
+        {
+          text: '📚 学习资源',
+          collapsed: false,
+          items: [
+            { text: '精品教程', link: '/resources/#精品教程' },
+            { text: '官方资源', link: '/resources/#官方资源' },
+            { text: '学习路径', link: '/resources/#学习路径建议' }
+          ]
+        },
+        {
+          text: '🎬 视频教程',
+          collapsed: false,
+          items: [
+            { text: '中文视频', link: '/resources/#中文视频' },
+            { text: '英文视频', link: '/resources/#英文视频带中文字幕' }
+          ]
+        },
+        {
+          text: '🏆 实战案例',
+          collapsed: false,
+          items: [
+            { text: '个人效率', link: '/resources/#个人效率' },
+            { text: '团队协作', link: '/resources/#团队协作' }
+          ]
+        },
+        {
+          text: '🛠️ 技能扩展',
+          collapsed: false,
+          items: [
+            { text: '官方 Skills', link: '/resources/#官方-skills' },
+            { text: '社区 Skills', link: '/resources/#社区-skills' }
           ]
         }
       ]
